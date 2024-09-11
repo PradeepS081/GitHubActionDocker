@@ -1,4 +1,4 @@
-name: Run job in container
+name: Run job in Docker container
 
 on: [push]
 
