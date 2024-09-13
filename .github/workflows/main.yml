@@ -10,6 +10,12 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
+    - name: Print app.js content
+      run: cat app.js
+
+    - name: Print package.json content
+      run: cat package.json
+
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v1
 
@@ -30,9 +36,6 @@ jobs:
 
     - name: Check Docker container status
       run: docker ps -a
-
-    - name: List files in Docker container
-      run: docker exec my-node-app-container ls -l /usr/src/app
 
     - name: Print Docker container logs
       run: docker logs my-node-app-container
