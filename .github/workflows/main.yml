@@ -25,5 +25,8 @@ jobs:
     - name: Run Docker container
       run: docker run -p 8080:8080 -d --name my-node-app-container my-node-app
 
+    - name: List files in Docker container
+      run: docker exec my-node-app-container ls -l /usr/src/app
+
     - name: Print Docker container logs
       run: docker logs my-node-app-container
